@@ -10,6 +10,7 @@ RUN npm run build
 # /app/build <--- has all the stuff
 
 FROM nginx
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 
 #Don't haave to specifically start up nginx ourselves. Will do it by default.
